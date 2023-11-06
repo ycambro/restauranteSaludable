@@ -14,10 +14,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class ProteinaDAO {
     public static List<Proteina> obtenerTodos() {
         List<Proteina> proteinas = new ArrayList<>();

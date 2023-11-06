@@ -7,10 +7,6 @@ package com.ycambro.tarea2.entidades;
 import com.ycambro.tarea2.entidades.comidas.*;
 import java.time.LocalDateTime;
 
-/**
- *
- * @author yurgencm
- */
 public class Registro {
     private String nombreOrden;
     private int tipo;

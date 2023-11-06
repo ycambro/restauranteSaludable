@@ -10,10 +10,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class BebidaDAO {
     
     public static List<Bebida> obtenerTodos() {

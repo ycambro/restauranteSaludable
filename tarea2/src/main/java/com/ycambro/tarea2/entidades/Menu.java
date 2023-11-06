@@ -6,10 +6,6 @@ package com.ycambro.tarea2.entidades;
 
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class Menu {
     private List<Object> platillos;
     

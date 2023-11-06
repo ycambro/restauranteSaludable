@@ -18,10 +18,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class RegistroDAO {
     public static List<Registro> obtenerTodos() {
         List<Registro> registros = new ArrayList<>();

@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.bd;
 
-/**
- *
- * @author yurgencm
- */
 public class Queries {
     public static final String BEBIDA_POR_ID = "select * from comida where id = ?";
     

@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.entidades.comidas;
 
-/**
- *
- * @author yurgencm
- */
 public class Proteina extends Comida {
     private String tipo;
     private String origen;

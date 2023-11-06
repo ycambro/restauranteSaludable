@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.entidades.comidas;
 
-/**
- *
- * @author yurgencm
- */
 public class Comida {
     private int id;
     private String nombre;

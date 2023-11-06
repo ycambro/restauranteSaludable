@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.entidades;
 
-/**
- *
- * @author yurgencm
- */
 public class Mesa {
     private int numeroMesa;
     private int disponible;

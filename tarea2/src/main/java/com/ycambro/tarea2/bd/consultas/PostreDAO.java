@@ -14,10 +14,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class PostreDAO {
     public static List<Postre> obtenerTodos() {
         List<Postre> postres = new ArrayList<>();

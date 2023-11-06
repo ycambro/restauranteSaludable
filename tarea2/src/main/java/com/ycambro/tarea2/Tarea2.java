@@ -6,10 +6,6 @@ package com.ycambro.tarea2;
 
 import com.ycambro.tarea2.ui.MainFrame;
 
-/**
- *
- * @author yurgencm
- */
 public class Tarea2 {
 
     public static void main(String[] args) {

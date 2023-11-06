@@ -13,10 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class Aplicacion {
     private Menu menu;
     private List<Mesa> mesas;
@@ -179,13 +175,8 @@ public class Aplicacion {
     }
     
     public void annadirRegistro(Registro registro) {
-        if (registro.getTipo() == 1) {
-            RegistroDAO.insertarRegistroTipo1(registro);
-            this.registros.add(registro);
-        } else if (registro.getTipo() == 2) {
-            RegistroDAO.insertarRegistroTipo2(registro);
-            this.registros.add(registro);
-        }
+        RegistroDAO.insertarRegistroTipo1(registro);
+        this.registros = RegistroDAO.obtenerTodos();
         
     }
     
@@ -220,5 +211,7 @@ public class Aplicacion {
             this.menu.setPlatillos(PlatosDAO.obtenerTodos());
         }
     }
+    
+    
     
 }

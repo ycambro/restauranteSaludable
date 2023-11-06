@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.entidades.comidas;
 
-/**
- *
- * @author yurgencm
- */
 public class PlatoBebida extends Plato {
     private Bebida bebida;
     

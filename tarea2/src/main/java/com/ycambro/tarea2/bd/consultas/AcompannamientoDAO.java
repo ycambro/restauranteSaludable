@@ -14,10 +14,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class AcompannamientoDAO {
     public static List<Acompannamiento> obtenerTodos() {
         List<Acompannamiento> acompannamientos = new ArrayList<>();

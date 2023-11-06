@@ -7,10 +7,6 @@ package com.ycambro.tarea2.entidades;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class Orden {
     private String identificador;
     private int mesa;

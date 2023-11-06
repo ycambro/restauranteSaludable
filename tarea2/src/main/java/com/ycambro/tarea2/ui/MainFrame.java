@@ -6,20 +6,49 @@ package com.ycambro.tarea2.ui;
 
 import com.ycambro.tarea2.Aplicacion;
 import com.ycambro.tarea2.bd.consultas.*;
+import com.ycambro.tarea2.entidades.Mesa;
+import com.ycambro.tarea2.entidades.Orden;
+import com.ycambro.tarea2.entidades.Persona;
+import com.ycambro.tarea2.entidades.Registro;
 import com.ycambro.tarea2.entidades.comidas.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author yurgencm
- */
 public class MainFrame extends javax.swing.JFrame {
     Aplicacion app = new Aplicacion();
     String sepalo = null;
     Image myIcon = Toolkit.getDefaultToolkit().getImage(MainFrame.class.getResource("/com/ycambro/tarea2/ui/logo.png"));
+    int precio1 = 0;
+    int precio2 = 0;
+    int precio3 = 0;
+    int precio4 = 0;
+    
+    int precioS1 = 0;
+    int precioS2 = 0;
+    int precioS3 = 0;
+    int precioS4 = 0;
+    int siguiente = 0;
+    int cals1 = 0;
+    int cals2 = 0;
+    int cals3 = 0;
+    int cals4 = 0;
+    Plato saludable11 = null;
+    PlatoBebida saludable21 = null;
+    PlatoCompleto saludable31 = null;
+    
+    Plato saludable12 = null;
+    PlatoBebida saludable22 = null;
+    PlatoCompleto saludable32 = null;
+    
+    Plato saludable13 = null;
+    PlatoBebida saludable23 = null;
+    PlatoCompleto saludable33 = null;
+    
+    Plato saludable14 = null;
+    PlatoBebida saludable24 = null;
+    PlatoCompleto saludable34 = null;
     
     /**
      * Creates new form MainFrame
@@ -106,6 +135,101 @@ public class MainFrame extends javax.swing.JFrame {
         obAc8 = new javax.swing.JComboBox<>();
         obAc9 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        orden = new javax.swing.JFrame();
+        textT8 = new javax.swing.JLabel();
+        textT9 = new javax.swing.JLabel();
+        nombreA2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        textPrice7 = new javax.swing.JLabel();
+        text7 = new javax.swing.JLabel();
+        text8 = new javax.swing.JLabel();
+        obAc10 = new javax.swing.JComboBox<>();
+        agregarBot2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        text9 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        textName2 = new javax.swing.JLabel();
+        textT10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        obAc12 = new javax.swing.JComboBox<>();
+        obAc11 = new javax.swing.JComboBox<>();
+        obAc13 = new javax.swing.JComboBox<>();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jTextField8 = new javax.swing.JTextField();
+        backg1 = new javax.swing.JLabel();
+        saludable = new javax.swing.JFrame();
+        textT11 = new javax.swing.JLabel();
+        textT12 = new javax.swing.JLabel();
+        textCal2 = new javax.swing.JLabel();
+        textPrice6 = new javax.swing.JLabel();
+        textPrice8 = new javax.swing.JLabel();
+        eliminarBot2 = new javax.swing.JButton();
+        text10 = new javax.swing.JLabel();
+        text11 = new javax.swing.JLabel();
+        obAc14 = new javax.swing.JComboBox<>();
+        agregarBot3 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        text12 = new javax.swing.JLabel();
+        textT13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        obAc16 = new javax.swing.JComboBox<>();
+        textT14 = new javax.swing.JLabel();
+        textPrice9 = new javax.swing.JLabel();
+        textPrice10 = new javax.swing.JLabel();
+        textPrice11 = new javax.swing.JLabel();
+        obAc22 = new javax.swing.JComboBox<>();
+        obAc23 = new javax.swing.JComboBox<>();
+        obAc24 = new javax.swing.JComboBox<>();
+        obAc25 = new javax.swing.JComboBox<>();
+        obAc26 = new javax.swing.JComboBox<>();
+        obAc27 = new javax.swing.JComboBox<>();
+        obAc28 = new javax.swing.JComboBox<>();
+        obAc29 = new javax.swing.JComboBox<>();
+        obAc30 = new javax.swing.JComboBox<>();
+        obAc31 = new javax.swing.JComboBox<>();
+        textPrice12 = new javax.swing.JLabel();
+        textPrice13 = new javax.swing.JLabel();
+        eliminarBot4 = new javax.swing.JButton();
+        eliminarBot3 = new javax.swing.JButton();
+        eliminarBot5 = new javax.swing.JButton();
+        obAc15 = new javax.swing.JComboBox<>();
+        obAc18 = new javax.swing.JComboBox<>();
+        obAc17 = new javax.swing.JComboBox<>();
+        obAc19 = new javax.swing.JComboBox<>();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        textT15 = new javax.swing.JLabel();
+        textT16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        facturas = new javax.swing.JFrame();
+        textPrice14 = new javax.swing.JLabel();
+        text13 = new javax.swing.JLabel();
+        text14 = new javax.swing.JLabel();
+        agregarBot4 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        text15 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList5 = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jList6 = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jList7 = new javax.swing.JList<>();
+        backg2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         cliente = new javax.swing.JButton();
         admin = new javax.swing.JButton();
@@ -552,6 +676,656 @@ public class MainFrame extends javax.swing.JFrame {
         crud1.setLocationRelativeTo(null); //Se centra
         crud1.setIconImage(myIcon);
 
+        orden.setTitle("Ordenar");
+        orden.setMinimumSize(new java.awt.Dimension(814, 407));
+        orden.setResizable(false);
+        orden.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textT8.setForeground(new java.awt.Color(0, 0, 0));
+        textT8.setText("Mesa:");
+        orden.getContentPane().add(textT8, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 196, -1, -1));
+
+        textT9.setForeground(new java.awt.Color(0, 0, 0));
+        textT9.setText("Pago:");
+        orden.getContentPane().add(textT9, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 234, 38, -1));
+
+        nombreA2.setBackground(java.awt.SystemColor.activeCaption);
+        nombreA2.setForeground(new java.awt.Color(0, 0, 0));
+        nombreA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreA2ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(nombreA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 115, 78, -1));
+
+        jTextField3.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 80, -1));
+        jTextField3.setEditable(false);
+
+        textPrice7.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice7.setText("Total:");
+        orden.getContentPane().add(textPrice7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 296, -1, 30));
+
+        text7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text7.setForeground(new java.awt.Color(0, 0, 0));
+        text7.setText("Ordenes");
+        orden.getContentPane().add(text7, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 84, -1, -1));
+
+        text8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text8.setForeground(new java.awt.Color(0, 0, 0));
+        text8.setText("Menu");
+        orden.getContentPane().add(text8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 102, -1));
+
+        obAc10.setBackground(java.awt.SystemColor.activeCaption);
+        obAc10.setForeground(new java.awt.Color(0, 0, 0));
+        obAc10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        obAc10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc10ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(obAc10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 115, -1));
+
+        agregarBot2.setText("Ordenar");
+        agregarBot2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBot2ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(agregarBot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Costo");
+        orden.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
+
+        text9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text9.setForeground(new java.awt.Color(0, 0, 0));
+        text9.setText("Datos");
+        orden.getContentPane().add(text9, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 83, 103, -1));
+
+        jComboBox1.setBackground(java.awt.SystemColor.activeCaption);
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
+        orden.getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+
+        textName2.setForeground(new java.awt.Color(0, 0, 0));
+        textName2.setText("Identificador:");
+        orden.getContentPane().add(textName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 120, -1, -1));
+
+        textT10.setForeground(new java.awt.Color(0, 0, 0));
+        textT10.setText("Personas:");
+        orden.getContentPane().add(textT10, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 158, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Persona2:");
+        orden.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, 30));
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Persona4:");
+        orden.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, 30));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Persona3:");
+        orden.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, 30));
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Persona1:");
+        orden.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, 30));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Orden");
+        orden.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 19, 180, -1));
+
+        obAc12.setBackground(java.awt.SystemColor.activeCaption);
+        obAc12.setForeground(new java.awt.Color(0, 0, 0));
+        obAc12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        obAc12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc12ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(obAc12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 115, -1));
+
+        obAc11.setBackground(java.awt.SystemColor.activeCaption);
+        obAc11.setForeground(new java.awt.Color(0, 0, 0));
+        obAc11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        obAc11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc11ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(obAc11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 115, -1));
+
+        obAc13.setBackground(java.awt.SystemColor.activeCaption);
+        obAc13.setForeground(new java.awt.Color(0, 0, 0));
+        obAc13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        obAc13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc13ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(obAc13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 115, -1));
+
+        jTextField4.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 80, -1));
+        jTextField4.setEditable(false);
+
+        jTextField5.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 80, -1));
+        jTextField5.setEditable(false);
+
+        jTextField6.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField6.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 80, -1));
+        jTextField6.setEditable(false);
+
+        jTextField7.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField7.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 80, -1));
+        jTextField7.setEditable(false);
+
+        jComboBox6.setBackground(java.awt.SystemColor.activeCaption);
+        jComboBox6.setForeground(new java.awt.Color(0, 0, 0));
+        orden.getContentPane().add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+        jComboBox6.addItem("Solo");
+        jComboBox6.addItem("Grupo");
+
+        jComboBox5.setBackground(java.awt.SystemColor.activeCaption);
+        jComboBox5.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
+        jComboBox5.addItem("1");
+        jComboBox5.addItem("2");
+        jComboBox5.addItem("3");
+        jComboBox5.addItem("4");
+
+        jList3.setBackground(java.awt.SystemColor.activeCaption);
+        jList3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList3.setForeground(new java.awt.Color(0, 0, 0));
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList3);
+
+        orden.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 109, 141, 216));
+
+        jTextField8.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField8.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        orden.getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 80, -1));
+        jTextField4.setEditable(false);
+
+        backg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ycambro/tarea2/ui/fondo.jpg"))); // NOI18N
+        orden.getContentPane().add(backg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 410));
+
+        orden.setLocationRelativeTo(null); //Se centra
+        orden.setIconImage(myIcon);
+
+        saludable.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        saludable.setTitle("Orden Saludable");
+        saludable.setMaximumSize(new java.awt.Dimension(814, 407));
+        saludable.setMinimumSize(new java.awt.Dimension(814, 407));
+        saludable.setPreferredSize(new java.awt.Dimension(814, 407));
+        saludable.setResizable(false);
+        saludable.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textT11.setForeground(new java.awt.Color(0, 0, 0));
+        textT11.setText("Gluten:");
+        saludable.getContentPane().add(textT11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 40, 30));
+
+        textT12.setForeground(new java.awt.Color(0, 0, 0));
+        textT12.setText("Temperatura:");
+        saludable.getContentPane().add(textT12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 60, 30));
+
+        textCal2.setForeground(new java.awt.Color(0, 0, 0));
+        textCal2.setText("Base:");
+        saludable.getContentPane().add(textCal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 50, 30));
+
+        textPrice6.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice6.setText("Origen:");
+        saludable.getContentPane().add(textPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 60, 30));
+
+        textPrice8.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice8.setText("Lacteo:");
+        saludable.getContentPane().add(textPrice8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, 30));
+
+        eliminarBot2.setText("Buscar");
+        eliminarBot2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBot2ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(eliminarBot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 107, -1));
+
+        text10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text10.setForeground(new java.awt.Color(0, 0, 0));
+        text10.setText("Bebida");
+        saludable.getContentPane().add(text10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, -1, -1));
+
+        text11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text11.setForeground(new java.awt.Color(0, 0, 0));
+        text11.setText("Proteina");
+        saludable.getContentPane().add(text11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 60, -1));
+
+        obAc14.setBackground(java.awt.SystemColor.activeCaption);
+        obAc14.setForeground(new java.awt.Color(0, 0, 0));
+        obAc14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc14ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc14, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 115, -1));
+
+        agregarBot3.setText("Ordenar");
+        agregarBot3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBot3ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(agregarBot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Postre");
+        saludable.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, -1, -1));
+
+        text12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text12.setForeground(new java.awt.Color(0, 0, 0));
+        text12.setText("Acompañamiento");
+        saludable.getContentPane().add(text12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 120, -1));
+
+        textT13.setForeground(new java.awt.Color(0, 0, 0));
+        textT13.setText("Calorias:");
+        saludable.getContentPane().add(textT13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 300, -1, 30));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Opcion saludable");
+        saludable.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 180, -1));
+
+        obAc16.setBackground(java.awt.SystemColor.activeCaption);
+        obAc16.setForeground(new java.awt.Color(0, 0, 0));
+        obAc16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Frío", "Caliente" }));
+        obAc16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc16ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 115, -1));
+
+        textT14.setForeground(new java.awt.Color(0, 0, 0));
+        textT14.setText("Temperatura:");
+        saludable.getContentPane().add(textT14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 50, 50));
+
+        textPrice9.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice9.setText("Preparación:");
+        saludable.getContentPane().add(textPrice9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 70, 30));
+
+        textPrice10.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice10.setText("Tipo:");
+        saludable.getContentPane().add(textPrice10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 60, 30));
+
+        textPrice11.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice11.setText("Tipo:");
+        saludable.getContentPane().add(textPrice11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, 30));
+
+        obAc22.setBackground(java.awt.SystemColor.activeCaption);
+        obAc22.setForeground(new java.awt.Color(0, 0, 0));
+        obAc22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Con lácteos", "Sin lácteos" }));
+        obAc22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc22ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc22, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 100, -1));
+
+        obAc23.setBackground(java.awt.SystemColor.activeCaption);
+        obAc23.setForeground(new java.awt.Color(0, 0, 0));
+        obAc23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plato", "Plato con Bebida", "Combo" }));
+        obAc23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc23ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 115, -1));
+
+        obAc24.setBackground(java.awt.SystemColor.activeCaption);
+        obAc24.setForeground(new java.awt.Color(0, 0, 0));
+        obAc24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plato", "Plato con Bebida", "Combo" }));
+        obAc24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc24ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 100, -1));
+
+        obAc25.setBackground(java.awt.SystemColor.activeCaption);
+        obAc25.setForeground(new java.awt.Color(0, 0, 0));
+        obAc25.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Animal", "Vegetal" }));
+        obAc25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc25ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc25, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 100, -1));
+
+        obAc26.setBackground(java.awt.SystemColor.activeCaption);
+        obAc26.setForeground(new java.awt.Color(0, 0, 0));
+        obAc26.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plato", "Plato con Bebida", "Combo" }));
+        obAc26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc26ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc26, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 100, -1));
+
+        obAc27.setBackground(java.awt.SystemColor.activeCaption);
+        obAc27.setForeground(new java.awt.Color(0, 0, 0));
+        obAc27.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Natural", "Carbonatada", "Alcohólica" }));
+        obAc27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc27ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc27, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 100, -1));
+
+        obAc28.setBackground(java.awt.SystemColor.activeCaption);
+        obAc28.setForeground(new java.awt.Color(0, 0, 0));
+        obAc28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc28ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc28, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 100, -1));
+
+        obAc29.setBackground(java.awt.SystemColor.activeCaption);
+        obAc29.setForeground(new java.awt.Color(0, 0, 0));
+        obAc29.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fría", "Caliente" }));
+        obAc29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc29ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc29, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 100, -1));
+
+        obAc30.setBackground(java.awt.SystemColor.activeCaption);
+        obAc30.setForeground(new java.awt.Color(0, 0, 0));
+        obAc30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc30ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc30, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 100, -1));
+
+        obAc31.setBackground(java.awt.SystemColor.activeCaption);
+        obAc31.setForeground(new java.awt.Color(0, 0, 0));
+        obAc31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc31ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc31, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 100, -1));
+
+        textPrice12.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice12.setText("Tipo:");
+        saludable.getContentPane().add(textPrice12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, -1, 30));
+
+        textPrice13.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice13.setText("Base:");
+        saludable.getContentPane().add(textPrice13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, 30));
+
+        eliminarBot4.setText("Buscar");
+        eliminarBot4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBot4ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(eliminarBot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 107, -1));
+
+        eliminarBot3.setText("Buscar");
+        eliminarBot3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBot3ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(eliminarBot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 107, -1));
+
+        eliminarBot5.setText("Buscar");
+        eliminarBot5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBot5ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(eliminarBot5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 107, -1));
+
+        obAc15.setBackground(java.awt.SystemColor.activeCaption);
+        obAc15.setForeground(new java.awt.Color(0, 0, 0));
+        obAc15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Con gluten", "Sin gluten" }));
+        obAc15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc15ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 115, -1));
+
+        obAc18.setBackground(java.awt.SystemColor.activeCaption);
+        obAc18.setForeground(new java.awt.Color(0, 0, 0));
+        obAc18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc18ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 115, -1));
+
+        obAc17.setBackground(java.awt.SystemColor.activeCaption);
+        obAc17.setForeground(new java.awt.Color(0, 0, 0));
+        obAc17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc17ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 115, -1));
+
+        obAc19.setBackground(java.awt.SystemColor.activeCaption);
+        obAc19.setForeground(new java.awt.Color(0, 0, 0));
+        obAc19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obAc19ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(obAc19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 115, -1));
+
+        jTextField9.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField9.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, 80, -1));
+        jTextField9.setEditable(false);
+
+        jTextField10.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField10.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+        saludable.getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 80, -1));
+        jTextField10.setEditable(false);
+
+        textT15.setForeground(new java.awt.Color(0, 0, 0));
+        textT15.setText("Tipo:");
+        saludable.getContentPane().add(textT15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 30, 30));
+
+        textT16.setForeground(new java.awt.Color(0, 0, 0));
+        textT16.setText("Precio:");
+        saludable.getContentPane().add(textT16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, 30));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ycambro/tarea2/ui/fondo3.jpg"))); // NOI18N
+        saludable.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -4, 820, 410));
+
+        saludable.setLocationRelativeTo(null); //Se centra
+        saludable.setIconImage(myIcon);
+
+        facturas.setTitle("Ordenar");
+        facturas.setMinimumSize(new java.awt.Dimension(814, 407));
+        facturas.setResizable(false);
+        facturas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textPrice14.setForeground(new java.awt.Color(0, 0, 0));
+        textPrice14.setText("Total:");
+        facturas.getContentPane().add(textPrice14, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, 30));
+
+        text13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text13.setForeground(new java.awt.Color(0, 0, 0));
+        text13.setText("Persona2");
+        facturas.getContentPane().add(text13, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 84, -1, -1));
+
+        text14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text14.setForeground(new java.awt.Color(0, 0, 0));
+        text14.setText("Persona1");
+        facturas.getContentPane().add(text14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 60, -1));
+
+        agregarBot4.setText("Salir");
+        agregarBot4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBot4ActionPerformed(evt);
+            }
+        });
+        facturas.getContentPane().add(agregarBot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Persona4");
+        facturas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, -1, -1));
+
+        text15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text15.setForeground(new java.awt.Color(0, 0, 0));
+        text15.setText("Persona3");
+        facturas.getContentPane().add(text15, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 83, 103, -1));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Factura");
+        facturas.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 19, 180, -1));
+
+        jTextField12.setBackground(java.awt.SystemColor.activeCaption);
+        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField12.setMaximumSize(new java.awt.Dimension(68, 26));
+        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField12ActionPerformed(evt);
+            }
+        });
+        facturas.getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 80, -1));
+        jTextField4.setEditable(false);
+
+        jList5.setBackground(java.awt.SystemColor.activeCaption);
+        jList5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList5.setForeground(new java.awt.Color(0, 0, 0));
+        jList5.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(jList5);
+
+        facturas.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 141, 216));
+
+        jList4.setBackground(java.awt.SystemColor.activeCaption);
+        jList4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList4.setForeground(new java.awt.Color(0, 0, 0));
+        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList4);
+
+        facturas.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 141, 216));
+
+        jList6.setBackground(java.awt.SystemColor.activeCaption);
+        jList6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList6.setForeground(new java.awt.Color(0, 0, 0));
+        jList6.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane6.setViewportView(jList6);
+
+        facturas.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 109, 141, 216));
+
+        jList7.setBackground(java.awt.SystemColor.activeCaption);
+        jList7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jList7.setForeground(new java.awt.Color(0, 0, 0));
+        jList7.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane7.setViewportView(jList7);
+
+        facturas.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 141, 216));
+
+        backg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/ycambro/tarea2/ui/fondo.jpg"))); // NOI18N
+        facturas.getContentPane().add(backg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 410));
+
+        facturas.setLocationRelativeTo(null); //Se centra
+        facturas.setIconImage(myIcon);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Restaurante Saludable");
         setIconImage(myIcon);
@@ -599,6 +1373,55 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteActionPerformed
+        orden.setVisible(true);
+        nombreA2.setText(null);
+        jComboBox1.removeAllItems();
+        for (Mesa mesa : app.getMesas()) {
+            if (mesa.getDisponibilidad() == 1) {
+                jComboBox1.addItem("" + mesa.getMesa());
+            }
+        }
+        
+        List<String> stringsp = new ArrayList<>();
+        obAc10.setEnabled(false);
+        obAc12.setEnabled(false);
+        obAc13.setEnabled(false);
+        obAc10.removeAllItems();
+        obAc11.removeAllItems();
+        obAc12.removeAllItems();
+        obAc13.removeAllItems();
+        List<Object> platos = PlatosDAO.obtenerTodos();
+        for (Object acomp : platos) {
+            if (acomp instanceof Plato temp) {
+                obAc10.addItem(temp.getNombre());
+                obAc11.addItem(temp.getNombre());
+                obAc12.addItem(temp.getNombre());
+                obAc13.addItem(temp.getNombre());
+                stringsp.add(temp.getNombre());
+            } else if (acomp instanceof PlatoBebida temp) {
+                obAc10.addItem(temp.getNombre());
+                obAc11.addItem(temp.getNombre());
+                obAc12.addItem(temp.getNombre());
+                obAc13.addItem(temp.getNombre());
+                stringsp.add(temp.getNombre());
+            } else if (acomp instanceof PlatoCompleto temp) {
+                obAc10.addItem(temp.getNombre());
+                obAc11.addItem(temp.getNombre());
+                obAc12.addItem(temp.getNombre());
+                obAc13.addItem(temp.getNombre());
+                stringsp.add(temp.getNombre());
+            }
+        }
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            @Override
+            public int getSize() { return stringsp.size(); }
+            @Override
+            public String getElementAt(int i) { return stringsp.get(i); }
+        });
+        obAc10.addItem("Opcion Saludable");
+        obAc11.addItem("Opcion Saludable");
+        obAc12.addItem("Opcion Saludable");
+        obAc13.addItem("Opcion Saludable");
         
     }//GEN-LAST:event_clienteActionPerformed
 
@@ -1117,6 +1940,627 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_obAc9ActionPerformed
 
+    private void nombreA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreA2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreA2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void agregarBot2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBot2ActionPerformed
+        List<Persona> personas = new ArrayList<>();
+        if (jComboBox5.getSelectedIndex() == 0) {
+            if (obAc11.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable11 != null) {
+                    Persona per1 = new Persona(saludable11, 1, 2);
+                    personas.add(per1);
+                } else if (saludable21 != null) {
+                    Persona per1 = new Persona(saludable21, 1, 2);
+                    personas.add(per1);
+                } else if (saludable31 != null) {
+                    Persona per1 = new Persona(saludable31, 1, 2);
+                    personas.add(per1);
+                }
+            } else {
+                Persona per1 = new Persona(app.getMenu().getPlatillos().get(obAc11.getSelectedIndex()), 1, 1);
+                personas.add(per1);
+            }
+        } else if (jComboBox5.getSelectedIndex() == 1) {
+            if (obAc11.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable11 != null) {
+                    Persona per1 = new Persona(saludable11, 1, 2);
+                    personas.add(per1);
+                } else if (saludable21 != null) {
+                    Persona per1 = new Persona(saludable21, 1, 2);
+                    personas.add(per1);
+                } else if (saludable31 != null) {
+                    Persona per1 = new Persona(saludable31, 1, 2);
+                    personas.add(per1);
+                }
+            } else {
+                Persona per1 = new Persona(app.getMenu().getPlatillos().get(obAc11.getSelectedIndex()), 1, 1);
+                personas.add(per1);
+            }
+            if (obAc12.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable12 != null) {
+                    Persona per2 = new Persona(saludable12, 2, 2);
+                    personas.add(per2);
+                } else if (saludable22 != null) {
+                    Persona per2 = new Persona(saludable22, 2, 2);
+                    personas.add(per2);
+                } else if (saludable32 != null) {
+                    Persona per2 = new Persona(saludable32, 2, 2);
+                    personas.add(per2);
+                }
+            } else {
+                Persona per2 = new Persona(app.getMenu().getPlatillos().get(obAc12.getSelectedIndex()), 2, 1);
+                personas.add(per2);
+            }
+        } else if (jComboBox5.getSelectedIndex() == 2) {
+            if (obAc11.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable11 != null) {
+                    Persona per1 = new Persona(saludable11, 1, 2);
+                    personas.add(per1);
+                } else if (saludable21 != null) {
+                    Persona per1 = new Persona(saludable21, 1, 2);
+                    personas.add(per1);
+                } else if (saludable31 != null) {
+                    Persona per1 = new Persona(saludable31, 1, 2);
+                    personas.add(per1);
+                }
+            } else {
+                Persona per1 = new Persona(app.getMenu().getPlatillos().get(obAc11.getSelectedIndex()), 1, 1);
+                personas.add(per1);
+            }
+            if (obAc12.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable12 != null) {
+                    Persona per2 = new Persona(saludable12, 2, 2);
+                    personas.add(per2);
+                } else if (saludable22 != null) {
+                    Persona per2 = new Persona(saludable22, 2, 2);
+                    personas.add(per2);
+                } else if (saludable32 != null) {
+                    Persona per2 = new Persona(saludable32, 2, 2);
+                    personas.add(per2);
+                }
+            } else {
+                Persona per2 = new Persona(app.getMenu().getPlatillos().get(obAc12.getSelectedIndex()), 2, 1);
+                personas.add(per2);
+            }
+            if (obAc13.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable13 != null) {
+                    Persona per3 = new Persona(saludable13, 3, 2);
+                    personas.add(per3);
+                } else if (saludable23 != null) {
+                    Persona per3 = new Persona(saludable23, 3, 2);
+                    personas.add(per3);
+                } else if (saludable33 != null) {
+                    Persona per3 = new Persona(saludable33, 3, 2);
+                    personas.add(per3);
+                }
+            } else {
+                Persona per3 = new Persona(app.getMenu().getPlatillos().get(obAc13.getSelectedIndex()), 2, 1);
+                personas.add(per3);
+            }
+        } else if (jComboBox5.getSelectedIndex() == 3) {
+            if (obAc11.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable11 != null) {
+                    Persona per1 = new Persona(saludable11, 1, 2);
+                    personas.add(per1);
+                } else if (saludable21 != null) {
+                    Persona per1 = new Persona(saludable21, 1, 2);
+                    personas.add(per1);
+                } else if (saludable31 != null) {
+                    Persona per1 = new Persona(saludable31, 1, 2);
+                    personas.add(per1);
+                }
+            } else {
+                Persona per1 = new Persona(app.getMenu().getPlatillos().get(obAc11.getSelectedIndex()), 1, 1);
+                personas.add(per1);
+            }
+            if (obAc12.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable12 != null) {
+                    Persona per2 = new Persona(saludable12, 2, 2);
+                    personas.add(per2);
+                } else if (saludable22 != null) {
+                    Persona per2 = new Persona(saludable22, 2, 2);
+                    personas.add(per2);
+                } else if (saludable32 != null) {
+                    Persona per2 = new Persona(saludable32, 2, 2);
+                    personas.add(per2);
+                }
+            } else {
+                Persona per2 = new Persona(app.getMenu().getPlatillos().get(obAc12.getSelectedIndex()), 2, 1);
+                personas.add(per2);
+            }
+            if (obAc13.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable13 != null) {
+                    Persona per3 = new Persona(saludable13, 3, 2);
+                    personas.add(per3);
+                } else if (saludable23 != null) {
+                    Persona per3 = new Persona(saludable23, 3, 2);
+                    personas.add(per3);
+                } else if (saludable33 != null) {
+                    Persona per3 = new Persona(saludable33, 3, 2);
+                    personas.add(per3);
+                }
+            } else {
+                Persona per3 = new Persona(app.getMenu().getPlatillos().get(obAc13.getSelectedIndex()), 3, 1);
+                personas.add(per3);
+            }
+            if (obAc10.getSelectedItem().equals("Opcion Saludable")) {
+                if (saludable14 != null) {
+                    Persona per4 = new Persona(saludable14, 4, 2);
+                    personas.add(per4);
+                } else if (saludable24 != null) {
+                    Persona per4 = new Persona(saludable24, 4, 2);
+                    personas.add(per4);
+                } else if (saludable34 != null) {
+                    Persona per4 = new Persona(saludable34, 4, 2);
+                    personas.add(per4);
+                }
+            } else {
+                Persona per4 = new Persona(app.getMenu().getPlatillos().get(obAc10.getSelectedIndex()), 4, 1);
+                personas.add(per4);
+            }
+        }
+        Orden orden1 = new Orden(nombreA2.getText(), jComboBox1.getSelectedIndex(), jComboBox6.getSelectedIndex()+1, personas);
+        int per_costo = 0;
+        for (Persona per : personas) {
+            if (per.getId() == 1) {
+                per_costo = precio1;
+            } else if (per.getId() == 2) {
+                per_costo = precio2;
+            } else if (per.getId() == 3) {
+                per_costo = precio3;
+            } else if (per.getId() == 4) {
+                per_costo = precio4;
+            }
+            app.annadirRegistro(new Registro(nombreA2.getText(), per.getTipo(), per.getPlato(), per_costo, orden1.getFechaOrden()));
+        }
+        orden.hide();
+        
+        facturas.setVisible(true);
+    }//GEN-LAST:event_agregarBot2ActionPerformed
+
+    public void actualizarOpcionesSaludable() {
+        List<Acompannamiento> acom = AcompannamientoDAO.obtenerTodos();
+        List<Proteina> prote = ProteinaDAO.obtenerTodos();
+        List<Bebida> bebidas = BebidaDAO.obtenerTodos();
+        List<Postre> postres = PostreDAO.obtenerTodos();
+        
+        List<String> lista = new ArrayList<>();
+        List<String> lista2 = new ArrayList<>();
+        List<String> lista3 = new ArrayList<>();
+        List<String> lista4 = new ArrayList<>();
+        
+        obAc23.removeAllItems();
+        
+        obAc24.removeAllItems();
+        obAc26.removeAllItems();
+        
+        obAc28.removeAllItems();
+        
+        obAc31.removeAllItems();
+        obAc30.removeAllItems();
+        
+        for (Acompannamiento a : acom) {
+            if (lista != null && lista.contains(a.getTipo())){
+                continue;
+            } else {
+                lista.add(a.getTipo());
+                obAc23.addItem(a.getTipo());
+            }
+        }
+        
+        for (Proteina a : prote) {
+            if (lista2 != null && lista2.contains(a.getTipo())){
+                continue;
+            } else {
+                obAc24.addItem(a.getTipo());
+                lista2.add(a.getTipo());
+            }
+        }
+        
+        for (Proteina a : prote) {
+            if (lista2 != null && lista2.contains(a.getPreparacion())){
+                continue;
+            } else {
+                obAc26.addItem(a.getPreparacion());
+                lista2.add(a.getPreparacion());
+            }
+        }
+        
+        for (Bebida a : bebidas) {
+            if (lista3 != null && lista3.contains(a.getBase())){
+                continue;
+            } else {
+                obAc28.addItem(a.getBase());
+                lista3.add(a.getBase());
+            }
+        }
+        
+        for (Postre a : postres) {
+            if (lista4 != null && lista4.contains(a.getBase())){
+                continue;
+            } else {
+                obAc31.addItem(a.getBase());
+                lista4.add(a.getBase());
+            }
+        }
+        
+        for (Postre a : postres) {
+            if (lista4 != null && lista4.contains(a.getTipo())){
+                continue;
+            } else {
+                obAc30.addItem(a.getTipo());
+                lista4.add(a.getTipo());
+            }
+        }
+    }
+    
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        if (jComboBox5.getSelectedIndex() == 1) {
+            obAc12.setEnabled(true);
+        } else if (jComboBox5.getSelectedIndex() == 2) {
+            obAc13.setEnabled(true);
+            obAc12.setEnabled(true);
+        } else if (jComboBox5.getSelectedIndex() == 3) {
+            obAc12.setEnabled(true);
+            obAc13.setEnabled(true);
+            obAc10.setEnabled(true);
+        }
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void obAc11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc11ActionPerformed
+        if (obAc11.getItemCount() > 0) {
+            if (obAc11.getSelectedItem().toString().equals("Opcion Saludable")) {
+                actualizarOpcionesSaludable();
+                saludable.setVisible(true);
+                saludable.setAlwaysOnTop(true);
+                siguiente = 1;
+            } else {
+                saludable11 = null;
+                saludable21 = null;
+                saludable31 = null;
+                List<Object> platillos = app.getMenu().getPlatillos();
+                if (platillos.get(obAc11.getSelectedIndex()) instanceof Plato tmp) {
+                    jTextField5.setText(""+tmp.getPrecio());
+                    precio1 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc11.getSelectedIndex()) instanceof PlatoBebida tmp) {
+                    jTextField5.setText(""+tmp.getPrecio());
+                    precio1 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc11.getSelectedIndex()) instanceof PlatoCompleto tmp) {
+                    jTextField5.setText(""+tmp.getPrecio());
+                    precio1 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                }
+            }
+        }
+    }//GEN-LAST:event_obAc11ActionPerformed
+
+    private void obAc12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc12ActionPerformed
+        if (obAc12.isEnabled() == true) {
+            if (obAc11.getSelectedItem().toString().equals("Opcion Saludable")) {
+                saludable.setVisible(true);
+                saludable.setAlwaysOnTop(true);
+                actualizarOpcionesSaludable();
+                siguiente = 2;
+            } else {
+                saludable12 = null;
+                saludable22 = null;
+                saludable32 = null;
+                List<Object> platillos = app.getMenu().getPlatillos();
+                if (platillos.get(obAc12.getSelectedIndex()) instanceof Plato tmp) {
+                    jTextField6.setText(""+tmp.getPrecio());
+                    precio2 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc12.getSelectedIndex()) instanceof PlatoBebida tmp) {
+                    jTextField6.setText(""+tmp.getPrecio());
+                    precio2 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc12.getSelectedIndex()) instanceof PlatoCompleto tmp) {
+                    jTextField6.setText(""+tmp.getPrecio());
+                    precio2 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                }
+            }
+        }
+    }//GEN-LAST:event_obAc12ActionPerformed
+
+    private void obAc13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc13ActionPerformed
+        if (obAc13.isEnabled() == true) {
+            if (obAc11.getSelectedItem().toString().equals("Opcion Saludable")) {
+                saludable.setVisible(true);
+                saludable.setAlwaysOnTop(true);
+                actualizarOpcionesSaludable();
+                siguiente = 3;
+            } else {
+                saludable13 = null;
+                saludable23 = null;
+                saludable33 = null;
+                List<Object> platillos = app.getMenu().getPlatillos();
+                if (platillos.get(obAc13.getSelectedIndex()) instanceof Plato tmp) {
+                    jTextField7.setText(""+tmp.getPrecio());
+                    precio3 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc13.getSelectedIndex()) instanceof PlatoBebida tmp) {
+                    jTextField7.setText(""+tmp.getPrecio());
+                    precio3 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc13.getSelectedIndex()) instanceof PlatoCompleto tmp) {
+                    jTextField7.setText(""+tmp.getPrecio());
+                    precio3 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                }
+            }
+        }
+    }//GEN-LAST:event_obAc13ActionPerformed
+
+    private void obAc10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc10ActionPerformed
+        if (obAc10.isEnabled() == true) {
+            if (obAc11.getSelectedItem().toString().equals("Opcion Saludable")) {
+                saludable.setVisible(true);
+                saludable.setAlwaysOnTop(true);
+                siguiente = 4;
+                actualizarOpcionesSaludable();
+            } else {
+                saludable14 = null;
+                saludable24 = null;
+                saludable34 = null;
+                List<Object> platillos = app.getMenu().getPlatillos();
+                if (platillos.get(obAc10.getSelectedIndex()) instanceof Plato tmp) {
+                    jTextField3.setText(""+tmp.getPrecio());
+                    precio4 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc10.getSelectedIndex()) instanceof PlatoBebida tmp) {
+                    jTextField3.setText(""+tmp.getPrecio());
+                    precio4 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                } else if (platillos.get(obAc10.getSelectedIndex()) instanceof PlatoCompleto tmp) {
+                    jTextField3.setText(""+tmp.getPrecio());
+                    precio4 = tmp.getPrecio();
+                    jTextField4.setText(""+(precio1+precio2+precio3+precio4));
+                }
+            }
+        }
+    }//GEN-LAST:event_obAc10ActionPerformed
+
+    private void eliminarBot2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarBot2ActionPerformed
+
+    private void obAc14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc14ActionPerformed
+        List<Postre> acom = PostreDAO.obtenerTodos();
+        for (Postre a : acom) {
+            if (a.getNombre().equals(obAc17.getSelectedItem().toString())) {
+                precioS4 = a.getPrecio();
+                cals4 = a.getCalorias();
+                jTextField10.setText(""+(precioS1+precioS2+precioS3+precioS4));
+                jTextField9.setText(""+(cals1+cals2+cals3+cals4));
+                break;
+            }
+        }
+    }//GEN-LAST:event_obAc14ActionPerformed
+
+    private void agregarBot3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBot3ActionPerformed
+        List<Acompannamiento> acom = AcompannamientoDAO.obtenerTodos();
+        List<Proteina> prote = ProteinaDAO.obtenerTodos();
+        List<Bebida> bebidas = BebidaDAO.obtenerTodos();
+        List<Postre> postres = PostreDAO.obtenerTodos();
+        Acompannamiento ac = null;
+        Proteina pr = null;
+        Bebida be = null;
+        Postre po = null;
+        
+        for (Acompannamiento a : acom) {
+            if (obAc17.getSelectedItem().toString().equals(a.getNombre())) {
+                ac = a;
+                break;
+            }
+        }
+        
+        for (Proteina a : prote) {
+            if (obAc18.getSelectedItem().toString().equals(a.getNombre())) {
+                pr = a;
+                break;
+            }
+        }
+        
+        for (Bebida a : bebidas) {
+            if (obAc19.getSelectedItem().toString().equals(a.getNombre())) {
+                be = a;
+                break;
+            }
+        }
+        
+        for (Postre a : postres) {
+            if (obAc14.getSelectedItem().toString().equals(a.getNombre())) {
+                po = a;
+                break;
+            }
+        }
+        
+        if (siguiente == 1) {
+            saludable31 = new PlatoCompleto(99, "Saludable", 3, ac, pr, be, po, (cals1+cals2+cals3+cals4), (precioS1+precioS2+precioS3+precioS4), "op", "op", "op");
+            saludable.hide();
+        } else if (siguiente == 2) {
+            saludable32 = new PlatoCompleto(99, "Saludable", 3, ac, pr, be, po, (cals1+cals2+cals3+cals4), (precioS1+precioS2+precioS3+precioS4), "op", "op", "op");
+            saludable.hide();
+        } else if (siguiente == 3) {
+            saludable33 = new PlatoCompleto(99, "Saludable", 3, ac, pr, be, po, (cals1+cals2+cals3+cals4), (precioS1+precioS2+precioS3+precioS4), "op", "op", "op");
+            saludable.hide();
+        } else if (siguiente == 4) {
+            saludable34 = new PlatoCompleto(99, "Saludable", 3, ac, pr, be, po, (cals1+cals2+cals3+cals4), (precioS1+precioS2+precioS3+precioS4), "op", "op", "op");
+            saludable.hide();
+        }
+    }//GEN-LAST:event_agregarBot3ActionPerformed
+
+    private void obAc16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc16ActionPerformed
+
+    private void obAc22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc22ActionPerformed
+
+    private void obAc23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc23ActionPerformed
+
+    private void obAc24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc24ActionPerformed
+
+    private void obAc25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc25ActionPerformed
+
+    private void obAc26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc26ActionPerformed
+
+    private void obAc27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc27ActionPerformed
+
+    private void obAc28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc28ActionPerformed
+
+    private void obAc29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc29ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc29ActionPerformed
+
+    private void obAc30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc30ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc30ActionPerformed
+
+    private void obAc31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc31ActionPerformed
+
+    private void eliminarBot3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot3ActionPerformed
+        List<Acompannamiento> acom = AcompannamientoDAO.obtenerTodos();
+        for (Acompannamiento a : acom) {
+            if (a.getTemperatura().equals(obAc16.getSelectedItem().toString()) || a.getTipo().equals(obAc23.getSelectedItem().toString()) || a.getGluten().equals(obAc15.getSelectedItem().toString())) {
+                obAc17.addItem(a.getNombre());
+            }
+        }
+        
+        List<Proteina> prot = ProteinaDAO.obtenerTodos();
+        for (Proteina a : prot) {
+            if (a.getTipo().equals(obAc24.getSelectedItem().toString()) || a.getOrigen().equals(obAc25.getSelectedItem().toString()) || a.getPreparacion().equals(obAc26.getSelectedItem().toString())) {
+                obAc18.addItem(a.getNombre());
+            }
+        }
+        
+        List<Postre> post = PostreDAO.obtenerTodos();
+        for (Postre a : post) {
+            if (a.getTipo().equals(obAc30.getSelectedItem().toString()) || a.getBase().equals(obAc31.getSelectedItem().toString()) || a.getLacteo().equals(obAc22.getSelectedItem().toString())) {
+                obAc14.addItem(a.getNombre());
+            }
+        }
+        
+        List<Bebida> bebi = BebidaDAO.obtenerTodos();
+        for (Bebida a : bebi) {
+            if (a.getTipo().equals(obAc27.getSelectedItem().toString()) || a.getBase().equals(obAc28.getSelectedItem().toString()) || a.getTemperatura().equals(obAc29.getSelectedItem().toString())) {
+                obAc19.addItem(a.getNombre());
+            }
+        }
+        
+    }//GEN-LAST:event_eliminarBot3ActionPerformed
+
+    private void eliminarBot4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarBot4ActionPerformed
+
+    private void eliminarBot5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarBot5ActionPerformed
+
+    private void obAc15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obAc15ActionPerformed
+
+    private void obAc17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc17ActionPerformed
+        List<Acompannamiento> acom = AcompannamientoDAO.obtenerTodos();
+        for (Acompannamiento a : acom) {
+            if (a.getNombre().equals(obAc17.getSelectedItem().toString())) {
+                precioS1 = a.getPrecio();
+                cals1 = a.getCalorias();
+                jTextField10.setText(""+(precioS1+precioS2+precioS3+precioS4));
+                jTextField9.setText(""+(cals1+cals2+cals3+cals4));
+                break;
+            }
+        }
+    }//GEN-LAST:event_obAc17ActionPerformed
+
+    private void obAc18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc18ActionPerformed
+        List<Proteina> acom = ProteinaDAO.obtenerTodos();
+        for (Proteina a : acom) {
+            if (a.getNombre().equals(obAc18.getSelectedItem().toString())) {
+                precioS2 = a.getPrecio();
+                cals2 = a.getCalorias();
+                jTextField10.setText(""+(precioS1+precioS2+precioS3+precioS4));
+                jTextField9.setText(""+(cals1+cals2+cals3+cals4));
+                break;
+            }
+        }
+    }//GEN-LAST:event_obAc18ActionPerformed
+
+    private void obAc19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc19ActionPerformed
+        List<Bebida> acom = BebidaDAO.obtenerTodos();
+        for (Bebida a : acom) {
+            if (a.getNombre().equals(obAc19.getSelectedItem().toString())) {
+                precioS3 = a.getPrecio();
+                cals3 = a.getCalorias();
+                jTextField10.setText(""+(precioS1+precioS2+precioS3+precioS4));
+                jTextField9.setText(""+(cals1+cals2+cals3+cals4));
+                break;
+            }
+        }
+    }//GEN-LAST:event_obAc19ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void agregarBot4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBot4ActionPerformed
+        facturas.hide();
+    }//GEN-LAST:event_agregarBot4ActionPerformed
+
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1156,71 +2600,166 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton admin;
     private javax.swing.JButton agregarBot;
     private javax.swing.JButton agregarBot1;
+    private javax.swing.JButton agregarBot2;
+    private javax.swing.JButton agregarBot3;
+    private javax.swing.JButton agregarBot4;
     private javax.swing.JLabel backg;
+    private javax.swing.JLabel backg1;
+    private javax.swing.JLabel backg2;
     private javax.swing.JTextField calA;
     private javax.swing.JButton cliente;
     private javax.swing.JFrame crud;
     private javax.swing.JFrame crud1;
     private javax.swing.JButton eliminarBot;
     private javax.swing.JButton eliminarBot1;
+    private javax.swing.JButton eliminarBot2;
+    private javax.swing.JButton eliminarBot3;
+    private javax.swing.JButton eliminarBot4;
+    private javax.swing.JButton eliminarBot5;
+    private javax.swing.JFrame facturas;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jList4;
+    private javax.swing.JList<String> jList5;
+    private javax.swing.JList<String> jList6;
+    private javax.swing.JList<String> jList7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField nombreA;
     private javax.swing.JTextField nombreA1;
+    private javax.swing.JTextField nombreA2;
     private javax.swing.JComboBox<String> obAc;
     private javax.swing.JComboBox<String> obAc1;
+    private javax.swing.JComboBox<String> obAc10;
+    private javax.swing.JComboBox<String> obAc11;
+    private javax.swing.JComboBox<String> obAc12;
+    private javax.swing.JComboBox<String> obAc13;
+    private javax.swing.JComboBox<String> obAc14;
+    private javax.swing.JComboBox<String> obAc15;
+    private javax.swing.JComboBox<String> obAc16;
+    private javax.swing.JComboBox<String> obAc17;
+    private javax.swing.JComboBox<String> obAc18;
+    private javax.swing.JComboBox<String> obAc19;
     private javax.swing.JComboBox<String> obAc2;
+    private javax.swing.JComboBox<String> obAc22;
+    private javax.swing.JComboBox<String> obAc23;
+    private javax.swing.JComboBox<String> obAc24;
+    private javax.swing.JComboBox<String> obAc25;
+    private javax.swing.JComboBox<String> obAc26;
+    private javax.swing.JComboBox<String> obAc27;
+    private javax.swing.JComboBox<String> obAc28;
+    private javax.swing.JComboBox<String> obAc29;
     private javax.swing.JComboBox<String> obAc3;
+    private javax.swing.JComboBox<String> obAc30;
+    private javax.swing.JComboBox<String> obAc31;
     private javax.swing.JComboBox<String> obAc4;
     private javax.swing.JComboBox<String> obAc5;
     private javax.swing.JComboBox<String> obAc6;
     private javax.swing.JComboBox<String> obAc7;
     private javax.swing.JComboBox<String> obAc8;
     private javax.swing.JComboBox<String> obAc9;
+    private javax.swing.JFrame orden;
     private javax.swing.JTextField precioA;
+    private javax.swing.JFrame saludable;
     private javax.swing.JLabel text1;
+    private javax.swing.JLabel text10;
+    private javax.swing.JLabel text11;
+    private javax.swing.JLabel text12;
+    private javax.swing.JLabel text13;
+    private javax.swing.JLabel text14;
+    private javax.swing.JLabel text15;
     private javax.swing.JLabel text2;
     private javax.swing.JLabel text3;
     private javax.swing.JLabel text4;
     private javax.swing.JLabel text5;
     private javax.swing.JLabel text6;
+    private javax.swing.JLabel text7;
+    private javax.swing.JLabel text8;
+    private javax.swing.JLabel text9;
     private javax.swing.JLabel textCal;
     private javax.swing.JLabel textCal1;
+    private javax.swing.JLabel textCal2;
     private javax.swing.JLabel textName;
     private javax.swing.JLabel textName1;
+    private javax.swing.JLabel textName2;
     private javax.swing.JLabel textPrice;
     private javax.swing.JLabel textPrice1;
+    private javax.swing.JLabel textPrice10;
+    private javax.swing.JLabel textPrice11;
+    private javax.swing.JLabel textPrice12;
+    private javax.swing.JLabel textPrice13;
+    private javax.swing.JLabel textPrice14;
     private javax.swing.JLabel textPrice2;
     private javax.swing.JLabel textPrice3;
     private javax.swing.JLabel textPrice4;
     private javax.swing.JLabel textPrice5;
+    private javax.swing.JLabel textPrice6;
+    private javax.swing.JLabel textPrice7;
+    private javax.swing.JLabel textPrice8;
+    private javax.swing.JLabel textPrice9;
     private javax.swing.JLabel textT1;
+    private javax.swing.JLabel textT10;
+    private javax.swing.JLabel textT11;
+    private javax.swing.JLabel textT12;
+    private javax.swing.JLabel textT13;
+    private javax.swing.JLabel textT14;
+    private javax.swing.JLabel textT15;
+    private javax.swing.JLabel textT16;
     private javax.swing.JLabel textT2;
     private javax.swing.JLabel textT3;
     private javax.swing.JLabel textT4;
     private javax.swing.JLabel textT5;
     private javax.swing.JLabel textT6;
     private javax.swing.JLabel textT7;
+    private javax.swing.JLabel textT8;
+    private javax.swing.JLabel textT9;
     private javax.swing.JTextField tipo1A;
     private javax.swing.JTextField tipo2A;
     private javax.swing.JTextField tipo3A;

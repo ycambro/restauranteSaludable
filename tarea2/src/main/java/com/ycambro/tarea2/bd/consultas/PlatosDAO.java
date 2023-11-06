@@ -14,10 +14,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author yurgencm
- */
 public class PlatosDAO {
     public static List<Object> obtenerTodos() {
         List<Object> platos = new ArrayList<>();

@@ -4,10 +4,6 @@
  */
 package com.ycambro.tarea2.bd;
 
-/**
- *
- * @author yurgencm
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
