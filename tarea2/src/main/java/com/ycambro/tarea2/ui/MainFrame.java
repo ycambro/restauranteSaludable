@@ -50,6 +50,8 @@ public class MainFrame extends javax.swing.JFrame {
     PlatoBebida saludable24 = null;
     PlatoCompleto saludable34 = null;
     
+    Orden orden1 = null;
+    
     /**
      * Creates new form MainFrame
      */
@@ -174,7 +176,6 @@ public class MainFrame extends javax.swing.JFrame {
         textCal2 = new javax.swing.JLabel();
         textPrice6 = new javax.swing.JLabel();
         textPrice8 = new javax.swing.JLabel();
-        eliminarBot2 = new javax.swing.JButton();
         text10 = new javax.swing.JLabel();
         text11 = new javax.swing.JLabel();
         obAc14 = new javax.swing.JComboBox<>();
@@ -200,9 +201,7 @@ public class MainFrame extends javax.swing.JFrame {
         obAc31 = new javax.swing.JComboBox<>();
         textPrice12 = new javax.swing.JLabel();
         textPrice13 = new javax.swing.JLabel();
-        eliminarBot4 = new javax.swing.JButton();
         eliminarBot3 = new javax.swing.JButton();
-        eliminarBot5 = new javax.swing.JButton();
         obAc15 = new javax.swing.JComboBox<>();
         obAc18 = new javax.swing.JComboBox<>();
         obAc17 = new javax.swing.JComboBox<>();
@@ -935,14 +934,6 @@ public class MainFrame extends javax.swing.JFrame {
         textPrice8.setText("Lacteo:");
         saludable.getContentPane().add(textPrice8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, 30));
 
-        eliminarBot2.setText("Buscar");
-        eliminarBot2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarBot2ActionPerformed(evt);
-            }
-        });
-        saludable.getContentPane().add(eliminarBot2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 107, -1));
-
         text10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         text10.setForeground(new java.awt.Color(0, 0, 0));
         text10.setText("Bebida");
@@ -1121,29 +1112,13 @@ public class MainFrame extends javax.swing.JFrame {
         textPrice13.setText("Base:");
         saludable.getContentPane().add(textPrice13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, 30));
 
-        eliminarBot4.setText("Buscar");
-        eliminarBot4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarBot4ActionPerformed(evt);
-            }
-        });
-        saludable.getContentPane().add(eliminarBot4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 107, -1));
-
         eliminarBot3.setText("Buscar");
         eliminarBot3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarBot3ActionPerformed(evt);
             }
         });
-        saludable.getContentPane().add(eliminarBot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 107, -1));
-
-        eliminarBot5.setText("Buscar");
-        eliminarBot5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarBot5ActionPerformed(evt);
-            }
-        });
-        saludable.getContentPane().add(eliminarBot5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 107, -1));
+        saludable.getContentPane().add(eliminarBot3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 107, -1));
 
         obAc15.setBackground(java.awt.SystemColor.activeCaption);
         obAc15.setForeground(new java.awt.Color(0, 0, 0));
@@ -2105,7 +2080,7 @@ public class MainFrame extends javax.swing.JFrame {
                 personas.add(per4);
             }
         }
-        Orden orden1 = new Orden(nombreA2.getText(), jComboBox1.getSelectedIndex(), jComboBox6.getSelectedIndex()+1, personas);
+        orden1 = new Orden(nombreA2.getText(), jComboBox1.getSelectedIndex(), jComboBox6.getSelectedIndex()+1, personas);
         int per_costo = 0;
         for (Persona per : personas) {
             if (per.getId() == 1) {
@@ -2121,6 +2096,147 @@ public class MainFrame extends javax.swing.JFrame {
         }
         orden.hide();
         
+        if (personas.size() == 1) {
+            List<String> strings = new ArrayList<>();
+            strings.add("Identificador: "+orden1.getIdentificador());
+            strings.add("Mesa: "+orden1.getMesa());
+            strings.add("Plato: "+obAc11.getSelectedItem().toString());
+            strings.add("Precio: "+precio1);
+            jList6.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings.size(); }
+                @Override
+                public String getElementAt(int i) { return strings.get(i); }
+            });
+            jScrollPane6.setVisible(true);
+            jScrollPane4.setVisible(false);
+            jScrollPane5.setVisible(false);
+            jScrollPane7.setVisible(false);
+        } else if (personas.size() == 2) {
+            List<String> strings = new ArrayList<>();
+            strings.add("Identificador: "+orden1.getIdentificador());
+            strings.add("Mesa: "+orden1.getMesa());
+            strings.add("Plato: "+obAc11.getSelectedItem().toString());
+            strings.add("Precio: "+precio1);
+            jList6.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings.size(); }
+                @Override
+                public String getElementAt(int i) { return strings.get(i); }
+            });
+            
+            List<String> strings1 = new ArrayList<>();
+            strings1.add("Identificador: "+orden1.getIdentificador());
+            strings1.add("Mesa: "+orden1.getMesa());
+            strings1.add("Plato: "+obAc12.getSelectedItem().toString());
+            strings1.add("Precio: "+precio2);
+            jList7.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings1.size(); }
+                @Override
+                public String getElementAt(int i) { return strings1.get(i); }
+            });
+            jScrollPane6.setVisible(true);
+            jScrollPane4.setVisible(false);
+            jScrollPane5.setVisible(false);
+            jScrollPane7.setVisible(true);
+        }else if (personas.size() == 3) {
+            List<String> strings = new ArrayList<>();
+            strings.add("Identificador: "+orden1.getIdentificador());
+            strings.add("Mesa: "+orden1.getMesa());
+            strings.add("Plato: "+obAc11.getSelectedItem().toString());
+            strings.add("Precio: "+precio1);
+            jList6.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings.size(); }
+                @Override
+                public String getElementAt(int i) { return strings.get(i); }
+            });
+            
+            List<String> strings1 = new ArrayList<>();
+            strings1.add("Identificador: "+orden1.getIdentificador());
+            strings1.add("Mesa: "+orden1.getMesa());
+            strings1.add("Plato: "+obAc12.getSelectedItem().toString());
+            strings1.add("Precio: "+precio2);
+            jList7.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings1.size(); }
+                @Override
+                public String getElementAt(int i) { return strings1.get(i); }
+            });
+            
+            List<String> strings2 = new ArrayList<>();
+            strings2.add("Identificador: "+orden1.getIdentificador());
+            strings2.add("Mesa: "+orden1.getMesa());
+            strings2.add("Plato: "+obAc13.getSelectedItem().toString());
+            strings2.add("Precio: "+precio3);
+            jList5.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings2.size(); }
+                @Override
+                public String getElementAt(int i) { return strings2.get(i); }
+            });
+            jScrollPane6.setVisible(true);
+            jScrollPane4.setVisible(false);
+            jScrollPane5.setVisible(true);
+            jScrollPane7.setVisible(true);
+        } else if (personas.size() == 4) {
+            List<String> strings = new ArrayList<>();
+            strings.add("Identificador: "+orden1.getIdentificador());
+            strings.add("Mesa: "+orden1.getMesa());
+            strings.add("Plato: "+obAc11.getSelectedItem().toString());
+            strings.add("Precio: "+precio1);
+            jList6.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings.size(); }
+                @Override
+                public String getElementAt(int i) { return strings.get(i); }
+            });
+            
+            List<String> strings1 = new ArrayList<>();
+            strings1.add("Identificador: "+orden1.getIdentificador());
+            strings1.add("Mesa: "+orden1.getMesa());
+            strings1.add("Plato: "+obAc12.getSelectedItem().toString());
+            strings1.add("Precio: "+precio2);
+            jList7.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings1.size(); }
+                @Override
+                public String getElementAt(int i) { return strings1.get(i); }
+            });
+            
+            List<String> strings2 = new ArrayList<>();
+            strings2.add("Identificador: "+orden1.getIdentificador());
+            strings2.add("Mesa: "+orden1.getMesa());
+            strings2.add("Plato: "+obAc13.getSelectedItem().toString());
+            strings2.add("Precio: "+precio3);
+            jList5.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings2.size(); }
+                @Override
+                public String getElementAt(int i) { return strings2.get(i); }
+            });
+            
+            List<String> strings3 = new ArrayList<>();
+            strings3.add("Identificador: "+orden1.getIdentificador());
+            strings3.add("Mesa: "+orden1.getMesa());
+            strings3.add("Plato: "+obAc10.getSelectedItem().toString());
+            strings3.add("Precio: "+precio4);
+            jList4.setModel(new javax.swing.AbstractListModel<String>() {
+                @Override
+                public int getSize() { return strings3.size(); }
+                @Override
+                public String getElementAt(int i) { return strings3.get(i); }
+            });
+            jScrollPane6.setVisible(true);
+            jScrollPane4.setVisible(true);
+            jScrollPane5.setVisible(true);
+            jScrollPane7.setVisible(true);
+        }
+        
+        for (Persona persona : orden1.getPersonas()) {
+            
+        }
         facturas.setVisible(true);
     }//GEN-LAST:event_agregarBot2ActionPerformed
 
@@ -2345,10 +2461,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_obAc10ActionPerformed
 
-    private void eliminarBot2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarBot2ActionPerformed
-
     private void obAc14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc14ActionPerformed
         List<Postre> acom = PostreDAO.obtenerTodos();
         for (Postre a : acom) {
@@ -2490,14 +2602,6 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_eliminarBot3ActionPerformed
 
-    private void eliminarBot4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarBot4ActionPerformed
-
-    private void eliminarBot5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBot5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eliminarBot5ActionPerformed
-
     private void obAc15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obAc15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_obAc15ActionPerformed
@@ -2612,10 +2716,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JFrame crud1;
     private javax.swing.JButton eliminarBot;
     private javax.swing.JButton eliminarBot1;
-    private javax.swing.JButton eliminarBot2;
     private javax.swing.JButton eliminarBot3;
-    private javax.swing.JButton eliminarBot4;
-    private javax.swing.JButton eliminarBot5;
     private javax.swing.JFrame facturas;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton jButton10;
